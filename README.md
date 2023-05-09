@@ -1,7 +1,12 @@
 ### Prerequisites
 
-- Python 3.6 or higher
-- Poetry (see below for installation instructions)
+- Python 3.11
+- Docker version 20.10.24 or higher
+- Poetry version 1.4.2 or higher (see below for installation instructions)
+
+### Docker Installation
+
+To install Docker, please follow the installation instructions at https://docs.docker.com/get-docker/.
 
 ### Poetry Installation
 
