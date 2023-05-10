@@ -4,8 +4,8 @@ services:
   db:
     container_name: pg-database
     build:
-      context: ./Database
-      dockerfile: Dockerfile
+      context: ./database
+      restart: always
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
