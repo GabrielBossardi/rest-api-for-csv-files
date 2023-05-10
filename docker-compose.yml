@@ -17,5 +17,17 @@ services:
     env_file:
       - .env
 
+  api:
+    container_name: flask-api
+    build: ./api
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db/${POSTGRES_DB}
+    ports:
+      - "5001:5000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+
 volumes:
   db-data:
