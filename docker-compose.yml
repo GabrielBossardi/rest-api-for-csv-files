@@ -22,6 +22,7 @@ services:
     build: ./api
     environment:
       DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db/${POSTGRES_DB}
+      CSV_UPLOAD_DIR: ${CSV_UPLOAD_DIR}
     ports:
       - "5001:5000"
     env_file:
