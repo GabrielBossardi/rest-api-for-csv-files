@@ -9,7 +9,16 @@ from sqlalchemy.types import Date
 
 @bp.route("/departments_above_average_hiring", methods=["GET"])
 def departments_above_average_hiring():
+    """
+    Retrieves the departments with hiring above the average.
+
+    Returns:
+        A JSON response containing the department IDs, names, and the number
+            of employees hired above the average.
+        HTTP status code 200 if successful, 400 if there is an error.
+    """
     try:
+        # Query to calculate the number of employees hired per department
         hiring_by_department = db.session.query(
             Department.id,
             Department.department,
@@ -20,6 +29,8 @@ def departments_above_average_hiring():
             ) == '2021-01-01'
         ).group_by(Department.id, Department.department).subquery()
 
+        # Query to calculate the average number of employees hired
+        # across departments
         final = db.session.query(
             hiring_by_department.c.id,
             hiring_by_department.c.department,
@@ -28,6 +39,8 @@ def departments_above_average_hiring():
                 .label('avg_employees_hired')
         ).select_from(hiring_by_department).subquery()
 
+        # Query to retrieve the departments with hiring above the average,
+        # sorted in descending order
         results = db.session.query(
             final.c.id,
             final.c.department,

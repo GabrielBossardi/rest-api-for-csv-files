@@ -10,9 +10,19 @@ from csv_app.models.job import Job
 
 @bp.route('/insert_csv', methods=['GET'])
 def insert_csv():
+    """
+    Endpoint for inserting data from CSV files into corresponding
+        database tables.
+
+    Returns:
+        A JSON response indicating the success of the data insertion.
+        HTTP status code 200 if successful, 400 if there is an error.
+    """
     valid_files = ['departments', 'hired_employees', 'jobs']
     file_paths = get_file_paths(valid_files)
 
+    # Metadata for each file, specifying table name, headers,
+    # and corresponding model class
     files_metadata = {
         'departments': {
             'table_name': 'departments',
@@ -31,6 +41,7 @@ def insert_csv():
         }
     }
 
+    # Process each file and insert data into the corresponding table
     for key, value in file_paths.items():
         csv_data = generate_dict(value, files_metadata[key]['header'])
 

@@ -10,7 +10,16 @@ from sqlalchemy.types import Date
 
 @bp.route("/employee_quarter_stats", methods=["GET"])
 def employee_quarter_stats():
+    """
+    Retrieves quarterly statistics for employees.
+
+    Returns:
+        A JSON response containing the department, job, and employee counts
+            for each quarter.
+        HTTP status code 200 if successful, 400 if there is an error.
+    """
     try:
+        # Query to calculate employee counts by department, job, and quarter
         values_by_quarter = (
             db.session.query(
                 Department.department,
@@ -35,6 +44,8 @@ def employee_quarter_stats():
             .subquery()
         )
 
+        # Query to calculate the total employee counts for each quarter by
+        # department and job
         final = (
             db.session.query(
                 values_by_quarter.c.department,
@@ -56,6 +67,8 @@ def employee_quarter_stats():
             .subquery()
         )
 
+        # Query to retrieve the department, job, and employee counts
+        # for each quarter
         results = (
             db.session.query(
                 final.c.department,
