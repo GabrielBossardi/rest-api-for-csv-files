@@ -1,10 +1,10 @@
-from flask import Flask
+from csv_app import create_app, db
+from flask_migrate import Migrate
 
-app = Flask(__name__)
+app = create_app('development')
+migrate = Migrate(app, db)
 
-@app.route("/")
-def hello():
-    return "Hello, World!"
+from csv_app.models.department import Department    # noqa: F401, E402
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")

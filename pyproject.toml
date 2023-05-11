@@ -10,9 +10,17 @@ readme = "README.md"
 python = "^3.11"
 flask = "^2.3.2"
 gunicorn = "^20.1.0"
+psycopg2-binary = "^2.9.6"
+flask-sqlalchemy = "^3.0.3"
+flask-migrate = "^4.0.4"
+flask-sqlalchemy-session = "^1.1"
 
 [tool.poetry.extras]
-api = ["flask", "gunicorn"]
+api = ["flask", "gunicorn", "psycopg2-binary"]
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.0.0"
+black = "^23.3.0"
 
 [build-system]
 requires = ["poetry-core"]
