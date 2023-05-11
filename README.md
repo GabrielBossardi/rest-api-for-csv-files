@@ -50,27 +50,27 @@ Note: The first endpoint, `/insert_csv`, needs to be executed before using the o
 - Request body (JSON): N/A
 - Response body (JSON):
 
-```json
-[
-    {
-        "department": "Department 1",
-        "job": "Job 1",
-        "q1": 10,
-        "q2": 12,
-        "q3": 8,
-        "q4": 15
-    },
-    {
-        "department": "Department 2",
-        "job": "Job 2",
-        "q1": 5,
-        "q2": 7,
-        "q3": 6,
-        "q4": 10
-    },
-    ...
-]
-```
+    ```json
+    [
+        {
+            "department": "Department 1",
+            "job": "Job 1",
+            "q1": 10,
+            "q2": 12,
+            "q3": 8,
+            "q4": 15
+        },
+        {
+            "department": "Department 2",
+            "job": "Job 2",
+            "q1": 5,
+            "q2": 7,
+            "q3": 6,
+            "q4": 10
+        },
+        ...
+    ]
+    ```
 
 ### 3. Departments Above Average Hiring
 - Method: GET
@@ -78,21 +78,21 @@ Note: The first endpoint, `/insert_csv`, needs to be executed before using the o
 - Request body (JSON): N/A
 - Response body (JSON):
 
-```json
-[
-    {
-        "id": 1,
-        "department": "Department 1",
-        "hired": 25
-    },
-    {
-        "id": 2,
-        "department": "Department 2",
-        "hired": 18
-    },
-    ...
-]
-```
+    ```json
+    [
+        {
+            "id": 1,
+            "department": "Department 1",
+            "hired": 25
+        },
+        {
+            "id": 2,
+            "department": "Department 2",
+            "hired": 18
+        },
+        ...
+    ]
+    ```
 
 ## Database
 
