@@ -20,7 +20,7 @@ To quickly run the CSV Data Processing API, follow these steps:
 
 4. In the project directory, open a terminal and run the command `poetry install` to install the project dependencies.
 
-5. Start the Docker containers by running the command `docker-compose up` in the project directory.
+5. Start the Docker containers by running the command `docker-compose up -d` in the project directory.
 
 6. Once the containers are up and running, you can access the API endpoints described above using a tool like cURL or an API testing tool like Postman.
 
