@@ -13,20 +13,19 @@ def insert_csv():
     files_metadata = {
         'departments': {
             'table_name': 'departments',
-            'header': ['id','department'],
+            'header': ['id', 'department'],
         },
         'hired_employees': {
             'table_name': 'employees',
-            'header': ['id','name','datetime','department_id','job_id'],
+            'header': ['id', 'name', 'datetime`, `department_id`, `job_id'],
         },
         'jobs': {
             'table_name': 'jobs',
-            'header': ['id','job'],
+            'header': ['id`, `job'],
         }
     }
 
     for key, value in file_paths.items():
-        table_name = files_metadata[key]['table_name']
         csv_data = generate_dict(value, files_metadata[key]['header'])
 
         try:
