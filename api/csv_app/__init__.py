@@ -13,4 +13,8 @@ def create_app(config_name):
 
     db.init_app(app)
 
+    # Register blueprints
+    from csv_app.routes import bp as main_bp
+    app.register_blueprint(main_bp)
+
     return app
