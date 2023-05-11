@@ -21,4 +21,4 @@ ENV PYTHONUNBUFFERED=1 \
     LC_ALL=C.UTF-8
 
 # Run the command to start the app
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+CMD ["sh", "-c", "flask db init && flask db migrate && flask db upgrade && gunicorn --bind 0.0.0.0:5000 app:app"]
