@@ -8,6 +8,11 @@ def generate_dict(file, header):
         csv_reader = csv.reader(csv_file, delimiter=',')
 
         for row in csv_reader:
-            csv_data.append(dict(zip(header, row)))
+            row_dict = dict(zip(header, row))
+            row_dict = {
+                key: (None if value == '' else value)
+                for key, value in row_dict.items()
+            }
+            csv_data.append(row_dict)
 
     return csv_data

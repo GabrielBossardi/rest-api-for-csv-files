@@ -181,25 +181,6 @@ Flask = ">=2.2"
 SQLAlchemy = ">=1.4.18"
 
 [[package]]
-name = "flask-sqlalchemy-session"
-version = "1.1"
-description = "SQL Alchemy session scoped on Flask requests."
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "Flask-SQLAlchemy-Session-1.1.tar.gz", hash = "sha256:0fbc520d587c891c2a0d58aa7952bc37edd73660f10006ff4732a72aa16d8157"},
-]
-
-[package.dependencies]
-Flask = ">=0.9"
-sqlalchemy = ">=0.9"
-Werkzeug = ">=0.6.1"
-
-[package.extras]
-docs = ["Sphinx (>=1.2.3)", "alabaster (>=0.6.3)"]
-
-[[package]]
 name = "greenlet"
 version = "2.0.2"
 description = "Lightweight in-process concurrent programming"
@@ -687,4 +668,4 @@ api = ["flask", "gunicorn", "psycopg2-binary"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "b2dec16941df06245e121ed82b5bf390d14f6da95a5ba2502612bcd2d6d22d9b"
+content-hash = "12dc2bfae9b2b6a4e26829cf73014e274a2b2286b495ae3d9a6e90306f3ff32b"

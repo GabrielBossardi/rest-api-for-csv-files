@@ -2,6 +2,7 @@ import os
 
 CSV_UPLOAD_DIR = os.environ.get('CSV_UPLOAD_DIR')
 
+
 def get_file_paths(valid_files):
     file_paths = {}
     for root_folder, subfolders, files in os.walk(CSV_UPLOAD_DIR):

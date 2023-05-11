@@ -6,8 +6,8 @@ class Employee(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     datetime = db.Column(db.String)
-    department_id = db.Column(db.Integer, db.ForeignKey('departments.id'))
-    job_id = db.Column(db.Integer, db.ForeignKey('jobs.id'))
+    department_id = db.Column(db.Integer)
+    job_id = db.Column(db.Integer)
 
     def __repr__(self):
         return '<Employee %r>' % self.name
