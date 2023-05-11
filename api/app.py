@@ -5,6 +5,7 @@ app = create_app('development')
 migrate = Migrate(app, db)
 
 from csv_app.models.department import Department    # noqa: F401, E402
+from csv_app.models.job import Job    # noqa: F401, E402
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
